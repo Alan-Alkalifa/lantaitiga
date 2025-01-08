@@ -94,7 +94,7 @@ export default function AboutUs() {
             primary: true
           },
           {
-            text: "Viwe Product & Services",
+            text: "View Products and Services",
             href: "/product-service",
             primary: false
           }
@@ -268,7 +268,7 @@ export default function AboutUs() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Work Together?</h2>
           <p className="text-text-primary/70 max-w-2xl mx-auto mb-10 text-lg">
-            Let's collaborate to bring your digital vision to life. Our team is ready to help you achieve your goals.
+            Let&apos;s collaborate to bring your digital vision to life. Our team is ready to help you achieve your goals.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

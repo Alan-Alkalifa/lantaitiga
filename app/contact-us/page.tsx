@@ -2,7 +2,6 @@
 
 import Hero from '@/components/ui/Hero';
 import { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 const contactInfo = [
@@ -163,7 +162,7 @@ export default function ContactUs() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
           <p className="text-text-primary/70 max-w-2xl mx-auto mb-8">
-            Let's discuss how we can help you achieve your digital transformation goals
+            Let&apos;s discuss how we can help you achieve your digital transformation goals
           </p>
           <Link
             href="/contact-us/form-contact-us"

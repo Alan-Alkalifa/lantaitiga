@@ -57,7 +57,7 @@ export default function ContactForm() {
         message: '',
         service: 'general'
       });
-    } catch (error) {
+    } catch {
       alert('There was an error sending your message. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -76,10 +76,10 @@ export default function ContactForm() {
           ref={titleRef}
           className="text-4xl md:text-5xl font-bold text-center mb-4"
         >
-          Let's Start a <span className="text-bg-secondary">Conversation</span>
+          Let&apos;s Start a <span className="text-bg-secondary">Conversation</span>
         </h1>
         <p className="text-text-primary/70 text-center max-w-2xl mx-auto mb-12">
-          Tell us about your project and let's create something amazing together
+          Tell us about your project and let&apos;s create something amazing together
         </p>
 
         <form

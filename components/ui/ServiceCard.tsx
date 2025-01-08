@@ -11,10 +11,9 @@ interface ServiceCardProps {
   title: string;
   description: string;
   icon: string;
-  index: number;
 }
 
-const ServiceCard = ({ title, description, icon, index }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, icon }: ServiceCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

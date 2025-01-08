@@ -201,7 +201,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
           <p className="text-text-primary/70 max-w-2xl mx-auto mb-10 text-lg">
-            Take the first step towards digital excellence. Let's create something amazing together.
+            Take the first step towards digital excellence. Let&apos;s create something amazing together.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

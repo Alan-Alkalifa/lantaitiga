@@ -31,7 +31,7 @@ export default function Testimonials() {
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
         <p className="text-text-primary/70 max-w-2xl mx-auto">
-          Don't just take our word for it - hear from some of our satisfied clients
+          Don&apos;t just take our word for it - hear from some of our satisfied clients
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -57,7 +57,7 @@ export default function Testimonials() {
                 <p className="text-sm text-text-primary/70">{testimonial.role}</p>
               </div>
             </div>
-            <p className="text-text-primary/80 italic">"{testimonial.content}"</p>
+            <p className="text-text-primary/80 italic">&ldquo;{testimonial.content}&rdquo;</p>
           </motion.div>
         ))}
       </div>
