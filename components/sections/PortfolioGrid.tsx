@@ -8,56 +8,56 @@ import { fadeIn, staggerContainer } from '@/components/animations';
 
 const portfolioItems = [
   {
-    title: "E-Commerce Platform",
+    title: "E-Commerce Website",
     category: "Web Development",
-    description: "A modern e-commerce platform built with Next.js and Stripe, featuring real-time inventory management.",
+    description: "A modern e-commerce website built with Next.js, featuring a responsive design and seamless checkout experience.",
     image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&q=80",
-    stats: { users: "50K+", sales: "$2M+", growth: "200%" },
-    tags: ["Next.js", "Stripe", "TypeScript"]
+    stats: { visitors: "1K+", conversion: "3.5%", satisfaction: "95%" },
+    tags: ["Next.js", "TailwindCSS", "Stripe"]
   },
   {
-    title: "Healthcare App",
+    title: "Inventory Management App",
     category: "Mobile Development",
-    description: "Patient management app that streamlines healthcare delivery and improves patient outcomes.",
+    description: "Cross-platform mobile app for real-time inventory tracking and management.",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80",
-    stats: { users: "100K+", appointments: "500K+", satisfaction: "98%" },
-    tags: ["React Native", "Firebase", "HIPAA Compliant"]
+    stats: { users: "50+", efficiency: "+25%", accuracy: "99%" },
+    tags: ["React Native", "Firebase", "Redux"]
   },
   {
-    title: "Cloud Migration",
+    title: "Cloud Migration Project",
     category: "Cloud Solutions",
-    description: "Successfully migrated enterprise infrastructure to AWS, improving performance and reducing costs.",
+    description: "Successful migration of on-premise infrastructure to cloud, improving scalability and reducing costs.",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
-    stats: { uptime: "99.99%", savings: "40%", performance: "+60%" },
-    tags: ["AWS", "Docker", "Kubernetes"]
+    stats: { uptime: "99.9%", savings: "30%", migration: "2 weeks" },
+    tags: ["AWS", "Docker", "Terraform"]
   },
   {
-    title: "Banking Dashboard",
-    category: "Web Development",
-    description: "Real-time financial analytics dashboard for a leading fintech company.",
+    title: "Sales Analytics Dashboard",
+    category: "Data Analytics",
+    description: "Interactive dashboard providing real-time sales insights and predictive analytics for data-driven decision making.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80",
-    stats: { transactions: "1M+/day", accuracy: "99.99%", speed: "50ms" },
-    tags: ["React", "D3.js", "Node.js"]
+    stats: { insights: "10+", accuracy: "95%", roi: "+20%" },
+    tags: ["Python", "Power BI", "Machine Learning"]
   },
   {
-    title: "IoT Platform",
-    category: "Cloud Solutions",
-    description: "IoT platform managing thousands of connected devices with real-time data processing.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80",
-    stats: { devices: "10K+", dataPoints: "1M+/hr", reliability: "99.9%" },
-    tags: ["IoT", "Azure", "Machine Learning"]
+    title: "Company Website Redesign",
+    category: "Web Development",
+    description: "Complete redesign of a corporate website with focus on user experience and performance.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+    stats: { speed: "+40%", engagement: "+35%", mobile: "60%" },
+    tags: ["Next.js", "Framer Motion", "TailwindCSS"]
   },
   {
-    title: "Delivery App",
-    category: "Mobile Development",
-    description: "Last-mile delivery solution with real-time tracking and route optimization.",
-    image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80",
-    stats: { deliveries: "100K+", efficiency: "+40%", coverage: "50 cities" },
-    tags: ["Flutter", "Google Maps", "Node.js"]
+    title: "Business Analytics Dashboard",
+    category: "Web Development",
+    description: "Interactive dashboard for visualizing business metrics and KPIs in real-time.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+    stats: { metrics: "15+", users: "20+", updates: "Real-time" },
+    tags: ["React", "D3.js", "Material UI"]
   }
 ];
 
-const categories = ["All", "Web Development", "Mobile Development", "Cloud Solutions"];
+const categories = ["All", "Web Development", "Mobile Development", "Cloud Solutions", "Data Analytics"];
 
 export default function PortfolioGrid() {
   const [activeCategory, setActiveCategory] = useState("All");

@@ -4,22 +4,76 @@ import Hero from "@/components/ui/Hero";
 
 const services = [
   {
-    title: "Web Development",
-    description: "Transform your online presence with custom web applications that deliver exceptional user experiences",
-    icon: "/icons/services/web.svg",
-    href: "/product-service#web"
+    title: 'Web Development',
+    description: 'Custom web applications built with modern technologies and best practices. From simple websites to complex enterprise solutions.',
+    icon: '/icons/services/web.svg',
+    href: '/product-service#web',
+    features: [
+      'Responsive Web Design',
+      'Progressive Web Apps',
+      'E-commerce Solutions',
+      'Custom CMS Development'
+    ]
   },
   {
-    title: "Mobile Apps",
-    description: "Reach your customers everywhere with powerful native and cross-platform mobile solutions",
-    icon: "/icons/services/mobile.svg",
-    href: "/product-service#mobile"
+    title: 'Mobile Development',
+    description: 'Native and cross-platform mobile applications for iOS and Android. Delivering seamless user experiences across all devices.',
+    icon: '/icons/services/mobile.svg',
+    href: '/product-service#mobile',
+    features: [
+      'iOS & Android Apps',
+      'Cross-platform Development',
+      'App Store Optimization',
+      'Mobile UI/UX Design'
+    ]
   },
   {
-    title: "Cloud Solutions",
-    description: "Scale your business with secure, reliable, and cost-effective cloud infrastructure",
-    icon: "/icons/services/cloud.svg",
-    href: "/product-service#cloud"
+    title: 'Cloud Solutions',
+    description: 'Scalable cloud infrastructure and services. Helping businesses leverage the power of cloud computing for growth and efficiency.',
+    icon: '/icons/services/cloud.svg',
+    href: '/product-service#cloud',
+    features: [
+      'Cloud Migration',
+      'Infrastructure Setup',
+      'Performance Optimization',
+      'Security Implementation'
+    ]
+  },
+  {
+    title: 'Data Analytics',
+    description: 'Transform raw data into actionable insights. Helping businesses make data-driven decisions through advanced analytics and visualization.',
+    icon: '/icons/services/analytics.svg',
+    href: '/product-service#analytics',
+    features: [
+      'Business Intelligence',
+      'Data Visualization',
+      'Predictive Analytics',
+      'Performance Metrics'
+    ]
+  },
+  {
+    title: 'IT Consulting',
+    description: 'Strategic technology consulting to help businesses make informed decisions. Providing roadmaps for digital transformation.',
+    icon: '/icons/services/consulting.svg',
+    href: '/product-service#consulting',
+    features: [
+      'Digital Strategy',
+      'Technology Assessment',
+      'Process Optimization',
+      'IT Roadmap Planning'
+    ]
+  },
+  {
+    title: 'UI/UX Design',
+    description: 'User-centered design solutions that combine aesthetics with functionality. Creating intuitive and engaging digital experiences.',
+    icon: '/icons/services/design.svg',
+    href: '/product-service#design',
+    features: [
+      'User Research',
+      'Interface Design',
+      'Prototyping',
+      'Usability Testing'
+    ]
   }
 ];
 

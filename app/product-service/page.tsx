@@ -40,6 +40,17 @@ const services = [
     ]
   },
   {
+    title: 'Data Analytics',
+    description: 'Transform raw data into actionable insights. Helping businesses make data-driven decisions through advanced analytics and visualization.',
+    icon: '/icons/services/analytics.svg',
+    features: [
+      'Business Intelligence',
+      'Data Visualization',
+      'Predictive Analytics',
+      'Performance Metrics'
+    ]
+  },
+  {
     title: 'IT Consulting',
     description: 'Strategic technology consulting to help businesses make informed decisions. Providing roadmaps for digital transformation.',
     icon: '/icons/services/consulting.svg',
