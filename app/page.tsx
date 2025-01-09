@@ -125,11 +125,11 @@ export default function Home() {
             primary: false
           }
         ]}
-        minHeight="80vh"
+        minHeight="60vh"
       />
 
       {/* Stats Section */}
-      <section className="max-w-7xl mx-auto px-4 py-16">
+      <section className="max-w-7xl mx-auto px-4 py-1">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center group cursor-default">

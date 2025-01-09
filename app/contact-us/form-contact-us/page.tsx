@@ -4,18 +4,16 @@ import { useState, FormEvent } from 'react';
 import { gsap } from 'gsap';
 import { useEffect, useRef } from 'react';
 import RichTextEditor from '@/components/ui/RichTextEditor';
+import { supabase } from '@/lib/supabase';
+import { Database } from '@/lib/supabase';
 
-interface FormData {
-  name: string;
-  email: string;
+type ContactFormData = Omit<Database['public']['Tables']['contacts']['Insert'], 'company' | 'phone'> & {
   company: string;
   phone: string;
-  message: string;
-  service: string;
-}
+};
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     company: '',
@@ -25,6 +23,7 @@ export default function ContactForm() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const formRef = useRef<HTMLFormElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
 
@@ -44,11 +43,37 @@ export default function ContactForm() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
 
     try {
-      // Here you would typically send the form data to your backend
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated API call
-      alert('Thank you for your message! We will get back to you soon.');
+      // Convert empty strings to null for optional fields
+      const submissionData = {
+        ...formData,
+        company: formData.company || null,
+        phone: formData.phone || null
+      };
+
+      // Save to Supabase
+      const { error: supabaseError } = await supabase
+        .from('contacts')
+        .insert([submissionData]);
+
+      if (supabaseError) throw supabaseError;
+
+      // Send email notification
+      const emailResponse = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData),
+      });
+
+      if (!emailResponse.ok) {
+        throw new Error('Failed to send email notification');
+      }
+      
+      setSubmitStatus('success');
       setFormData({
         name: '',
         email: '',
@@ -57,8 +82,9 @@ export default function ContactForm() {
         message: '',
         service: 'general'
       });
-    } catch {
-      alert('There was an error sending your message. Please try again.');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
@@ -81,6 +107,18 @@ export default function ContactForm() {
         <p className="text-text-primary/70 text-center max-w-2xl mx-auto mb-12">
           Tell us about your project and let&apos;s create something amazing together
         </p>
+
+        {submitStatus === 'success' && (
+          <div className="mb-6 p-4 rounded-lg bg-green-500/10 text-green-500 text-center">
+            Thank you for your message! We will get back to you soon.
+          </div>
+        )}
+
+        {submitStatus === 'error' && (
+          <div className="mb-6 p-4 rounded-lg bg-red-500/10 text-red-500 text-center">
+            There was an error sending your message. Please try again.
+          </div>
+        )}
 
         <form
           ref={formRef}

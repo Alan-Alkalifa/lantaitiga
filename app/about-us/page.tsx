@@ -32,6 +32,20 @@ const teamMembers = [
     image: '/team/placeholder.jpg',
     description: 'Award-winning designer specializing in user experience.',
     linkedin: 'https://linkedin.com'
+  },
+  {
+    name: 'Sarah Chen',
+    role: 'Product Manager',
+    image: '/team/placeholder.jpg',
+    description: 'Strategic product leader with expertise in agile methodologies.',
+    linkedin: 'https://linkedin.com'
+  },
+  {
+    name: 'Alex Rivera',
+    role: 'Development Lead',
+    image: '/team/placeholder.jpg',
+    description: 'Full-stack developer with a passion for scalable solutions.',
+    linkedin: 'https://linkedin.com'
   }
 ];
 
@@ -199,19 +213,44 @@ export default function AboutUs() {
           </p>
         </div>
         <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-bg-secondary/20"></div>
+          {/* Timeline line - hidden on mobile, shown on md and up */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-bg-secondary/20"></div>
+          
+          {/* Mobile timeline line */}
+          <div className="md:hidden absolute left-4 top-0 bottom-0 w-px bg-bg-secondary/20"></div>
+
           <div className="space-y-12">
             {milestones.map((milestone, index) => (
-              <div key={index} className={`flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                  <div className="text-3xl font-bold text-bg-secondary mb-2">{milestone.year}</div>
-                  <h3 className="text-xl font-semibold mb-2">{milestone.title}</h3>
-                  <p className="text-text-primary/70">{milestone.description}</p>
+              <div 
+                key={index} 
+                className={`flex items-start gap-8 
+                  ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}
+                  flex-row`}
+              >
+                {/* Content for mobile (always left-aligned) and desktop (alternating) */}
+                <div className={`flex-1 md:flex-none md:w-[calc(50%-2rem)] 
+                  ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}
+                  text-left pl-12 md:pl-0`}
+                >
+                  <div className="text-2xl md:text-3xl font-bold text-bg-secondary mb-2">
+                    {milestone.year}
+                  </div>
+                  <h3 className="text-lg md:text-xl font-semibold mb-2">
+                    {milestone.title}
+                  </h3>
+                  <p className="text-text-primary/70 text-sm md:text-base">
+                    {milestone.description}
+                  </p>
                 </div>
-                <div className="relative flex items-center justify-center w-8 h-8">
-                  <div className="absolute w-3 h-3 bg-bg-secondary rounded-full"></div>
+
+                {/* Timeline dot - Adjusted for mobile */}
+                <div className="absolute left-4 md:static md:flex md:items-center md:justify-center md:w-8 md:h-8">
+                  <div className="w-3 h-3 bg-bg-secondary rounded-full 
+                    ring-4 ring-bg-secondary/20"></div>
                 </div>
-                <div className="flex-1"></div>
+
+                {/* Empty space for desktop layout */}
+                <div className="hidden md:block md:flex-none md:w-[calc(50%-2rem)]"></div>
               </div>
             ))}
           </div>
@@ -226,12 +265,13 @@ export default function AboutUs() {
             Meet the experts behind our success
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto pb-8 gap-8 snap-x snap-mandatory scrollbar-hide">
           {teamMembers.map((member, index) => (
             <div 
               key={index}
               className="group p-6 rounded-xl border border-bg-secondary/10 hover:border-bg-secondary
-                       transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                       transition-all duration-300 hover:shadow-lg hover:-translate-y-1
+                       flex-shrink-0 w-[300px] snap-center"
             >
               <div className="relative overflow-hidden rounded-xl mb-6 aspect-square">
                 <Image
