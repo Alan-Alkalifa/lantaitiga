@@ -113,7 +113,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-bg-secondary/10">
           <p className="text-center text-text-primary/60 text-sm">
-            {new Date().getFullYear()} LantaiTiga. All rights reserved.
+            {new Date().getFullYear()} Created By Alan Alkalifa
           </p>
         </div>
       </div>
