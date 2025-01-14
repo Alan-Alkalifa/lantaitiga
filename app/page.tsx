@@ -1,19 +1,6 @@
-import { Metadata } from 'next';
 import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/ui/Hero";
-
-export const metadata: Metadata = {
-  title: 'LanTaiTiga - Web, Mobile & Cloud Development Solutions',
-  description: 'Leading technology solutions provider specializing in web development, mobile apps, cloud solutions, and data analytics. Transform your business with our innovative digital solutions.',
-  keywords: 'web development, mobile apps, cloud solutions, data analytics, software development, digital transformation',
-  openGraph: {
-    title: 'LanTaiTiga - Web, Mobile & Cloud Development Solutions',
-    description: 'Transform your business with our innovative digital solutions in web, mobile, cloud, and data analytics.',
-    type: 'website',
-    locale: 'en_US',
-  },
-};
 
 const services = [
   {

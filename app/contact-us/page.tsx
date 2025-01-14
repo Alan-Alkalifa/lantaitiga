@@ -1,4 +1,5 @@
 'use client';
+
 import Hero from '@/components/ui/Hero';
 import { useState } from 'react';
 import Link from 'next/link';

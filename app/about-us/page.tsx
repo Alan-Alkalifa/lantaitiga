@@ -1,7 +1,8 @@
 'use client';
+
+import Hero from '@/components/ui/Hero';
 import Image from 'next/image';
 import Link from 'next/link';
-import Hero from '@/components/ui/Hero';
 import { useState } from 'react';
 
 const stats = [
