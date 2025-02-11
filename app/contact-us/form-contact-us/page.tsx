@@ -59,19 +59,6 @@ export default function ContactForm() {
         .insert([submissionData]);
 
       if (supabaseError) throw supabaseError;
-
-      // Send email notification
-      const emailResponse = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(submissionData),
-      });
-
-      if (!emailResponse.ok) {
-        throw new Error('Failed to send email notification');
-      }
       
       setSubmitStatus('success');
       setFormData({
